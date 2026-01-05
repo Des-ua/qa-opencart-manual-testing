@@ -3,5 +3,5 @@ Test Environment:
 - Application: OpenCart Demo
 - Platform: Web application
 - URL: https://demo.opencart.com/
-- Browsers: Microsoft edge
+- Browsers: Google Chrome, Microsoft Edge (desktop)
 - Test Data: Demo users and products provided by the application
