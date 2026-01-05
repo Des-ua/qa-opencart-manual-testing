@@ -1,0 +1,6 @@
+Test Types
+
+- Functional testing – to verify that core e-commerce functionality works as expected
+- Smoke testing – to ensure that critical functionality is available
+- UI testing – to verify correctness of UI elements and layouts
+- Exploratory testing – to identify defects through ad-hoc testing
