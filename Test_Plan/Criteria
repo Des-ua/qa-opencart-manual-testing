@@ -1,0 +1,11 @@
+Entry Criteria:
+
+- Application is accessible
+- Test environment is available
+- Test data is prepared
+
+Exit Criteria:
+
+- All planned test cases are executed
+- Critical and major defects are reported
+- Smoke tests are passed
