@@ -5,3 +5,18 @@ Test Objectives:
 - Verify that core e-commerce functionality works according to expected behavior
 - Ensure that critical user flows for guest and registered users function correctly
 - Identify functional and UI defects in the application
+
+Test Scope
+
+In Scope:
+- User registration and login
+- Product browsing and search
+- Product details page
+- Shopping cart functionality
+- UI elements and form validation
+
+Out of Scope:
+- Payment systems
+- Backend and database testing
+- Security testing
+- Admin panel functionality
