@@ -1,0 +1,8 @@
+- Risk: Demo environment instability  
+  Mitigation: Retesting after environment recovery
+
+- Risk: Real payment functionality is not available  
+  Mitigation: Payment testing is excluded from scope
+
+- Risk: Possible data reset on demo site  
+  Mitigation: Recreate test data if needed
