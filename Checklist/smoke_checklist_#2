@@ -1,0 +1,91 @@
+Smoke_test:
+
+  Application availability — PASS
+
+  Expected result:
+
+  Main page loads successfully
+
+  No critical errors (4xx / 5xx)
+
+  UI elements are visible
+
+  Actual result:
+
+  Main page opened successfully
+
+  No visible issues found
+
+Header & Navigation — PASS
+
+  Checked:
+
+  Header displays correctly
+
+  Logo is clickable
+
+  Main menu works
+
+  Search displays
+
+  Status: PASS
+
+Product visibility — PASS
+
+  Checked:
+
+  Products are displayed on the main page.
+  
+  Product names and prices are displayed.
+
+  The Add to Cart button is present.
+  
+  Status: PASS
+
+Product visibility — PASS
+
+  Checked:
+
+  Products are displayed on the main page.
+
+  Product names and prices are displayed.
+
+  The Add to Cart button is present.
+
+  Status: PASS
+
+Product details page — PASS
+
+  Checked:
+
+  Transition to the product page works
+
+  Name and price are displayed
+
+  Add to Cart button is present
+
+  Status: PASS
+  
+Add to Cart — PASS
+
+  Checked:
+
+  Item successfully added to cart
+
+  Success message displayed
+
+  Cart icon updated with number of items
+
+  Status: PASS
+
+Shopping Cart page — PASS
+
+  Checked:
+
+  The cart opens
+
+  The product is visible
+
+  The name and price are displayed
+  
+  Status: PASS
