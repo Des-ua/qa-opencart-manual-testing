@@ -1,91 +1,65 @@
-Smoke_test:
+## Smoke Test – OpenCart Demo
 
-  Application availability — PASS
+### 1. Application Availability
+Status: PASS
 
-  Expected result:
+Expected result:
+- Main page loads successfully
+- No critical errors (4xx / 5xx)
+- UI elements are visible
 
-  Main page loads successfully
+Actual result:
+- Main page opened successfully
+- No visible issues found
 
-  No critical errors (4xx / 5xx)
+---
 
-  UI elements are visible
+### 2. Header & Navigation
+Status: PASS
 
-  Actual result:
+Checked:
+- Header displays correctly
+- Logo is clickable
+- Main menu works
+- Search is displayed
 
-  Main page opened successfully
+---
 
-  No visible issues found
+### 3. Product Visibility
+Status: PASS
 
-Header & Navigation — PASS
+Checked:
+- Products are displayed on the main page
+- Product names and prices are displayed
+- Add to Cart button is present
 
-  Checked:
+---
 
-  Header displays correctly
+### 4. Product Details Page
+Status: PASS
 
-  Logo is clickable
+Checked:
+- Transition to product page works
+- Product name and price are displayed
+- Add to Cart button is present
 
-  Main menu works
+---
 
-  Search displays
+### 5. Add to Cart
+Status: PASS
 
-  Status: PASS
+Checked:
+- Item successfully added to cart
+- Success message displayed
+- Cart icon updated with item count
 
-Product visibility — PASS
+---
 
-  Checked:
+### 6. Shopping Cart Page
+Status: PASS
 
-  Products are displayed on the main page.
-  
-  Product names and prices are displayed.
+Checked:
+- Cart page opens
+- Added product is visible
+- Product name and price are displayed
 
-  The Add to Cart button is present.
-  
-  Status: PASS
-
-Product visibility — PASS
-
-  Checked:
-
-  Products are displayed on the main page.
-
-  Product names and prices are displayed.
-
-  The Add to Cart button is present.
-
-  Status: PASS
-
-Product details page — PASS
-
-  Checked:
-
-  Transition to the product page works
-
-  Name and price are displayed
-
-  Add to Cart button is present
-
-  Status: PASS
-  
-Add to Cart — PASS
-
-  Checked:
-
-  Item successfully added to cart
-
-  Success message displayed
-
-  Cart icon updated with number of items
-
-  Status: PASS
-
-Shopping Cart page — PASS
-
-  Checked:
-
-  The cart opens
-
-  The product is visible
-
-  The name and price are displayed
-  
-  Status: PASS
