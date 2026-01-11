@@ -1,0 +1,17 @@
+Smoke test – FINAL STATUS
+
+Application: OpenCart Demo
+Smoke test result: PASSED
+
+Checklist summary:
+
+Application availability – PASSED
+Header and navigation – PASSED
+Product visibility – PASSED
+Product detail page – PASSED
+Add to cart – PASSED
+Cart page – PASSED
+Registration/login pages – PASSED
+
+Conclusion:
+The critical functions are working, the system is stable, and you can proceed to the basic functional test.
