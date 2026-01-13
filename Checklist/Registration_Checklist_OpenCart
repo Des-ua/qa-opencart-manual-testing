@@ -1,0 +1,58 @@
+## Registration Checklist — OpenCart Demo
+
+### Preconditions
+- [ ] User is not logged in
+- [ ] Application is accessible
+- [ ] User is on the Registration page
+
+---
+
+### Registration Page UI
+- [ ] Registration page opens successfully
+- [ ] Page title is displayed correctly
+- [ ] All required fields are visible:
+  - First Name
+  - Last Name
+  - Email
+  - Password
+  - Password Confirm
+- [ ] Continue button is displayed
+
+---
+
+### Mandatory Fields Validation
+- [ ] Registration without filling any fields
+- [ ] Registration with only mandatory fields filled
+- [ ] Validation message shown for empty required fields
+- [ ] User cannot proceed without accepting Privacy Policy
+
+---
+
+### Email Field Validation
+- [ ] Valid email format is accepted
+- [ ] Invalid email format is rejected
+- [ ] Registration with already existing email
+- [ ] Error message is shown for duplicate email
+
+---
+
+### Password Validation
+- [ ] Password field masks input
+- [ ] Password and Confirm Password must match
+- [ ] Registration fails if passwords do not match
+- [ ] Error message is displayed for mismatch
+
+---
+
+### Successful Registration
+- [ ] Registration with valid data
+- [ ] Success message is displayed
+- [ ] User is redirected after successful registration
+- [ ] User is logged in after registration (if applicable)
+
+---
+
+### Negative Scenarios (basic)
+- [ ] Submit form with invalid data
+- [ ] Proper error messages are displayed
+- [ ] Enter data is not cleared after validation error
