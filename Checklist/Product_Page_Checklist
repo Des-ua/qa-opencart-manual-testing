@@ -1,1 +1,55 @@
+## Product Page Checklist — OpenCart Demo
+
+### Preconditions
+- [ ] Application is accessible
+- [ ] User is on the main page
+- [ ] At least one product is available
+
+---
+
+### Product Page Navigation
+- [ ] User can open product page from the main page
+- [ ] Product page opens successfully
+- [ ] URL changes according to selected product
+
+---
+
+### Product Information
+- [ ] Product name is displayed
+- [ ] Product image is displayed
+- [ ] Product price is displayed
+- [ ] Product description is displayed
+
+---
+
+### Add to Cart Section
+- [ ] Add to Cart button is displayed
+- [ ] User can add product to cart
+- [ ] Success message is displayed after adding product
+- [ ] Cart icon updates product quantity
+
+---
+
+### Quantity Field
+- [ ] Quantity field is displayed
+- [ ] User can change product quantity
+- [ ] Quantity accepts numeric values only
+
+---
+
+### UI & Layout
+- [ ] Product page layout is not broken
+- [ ] All elements are visible and readable
+- [ ] Page is displayed correctly in desktop browser
+
+---
+
+### Negative Scenarios (basic)
+- [ ] Add to Cart without selecting required options (if applicable)
+- [ ] Proper error message is displayed
+
+---
+
+### Product Image
+- [ ] Product image loads correctly
 
