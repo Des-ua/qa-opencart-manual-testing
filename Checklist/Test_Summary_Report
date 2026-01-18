@@ -1,0 +1,61 @@
+## Test Summary Report — OpenCart Demo
+
+### Project Information
+- Application: OpenCart Demo
+- Type: E-commerce web application
+- Testing type: Manual testing
+- Environment: Web (Desktop browser)
+- URL: https://demo.opencart.com/
+
+---
+
+### Test Scope
+The following areas were tested:
+- Smoke testing of the application
+- User registration
+- User login
+- Product page functionality
+- Shopping cart functionality
+
+Out of scope:
+- Payment processing
+- Backend and database testing
+- Security testing
+- Admin panel
+
+---
+
+### Testing Approach
+Testing was performed using manual testing techniques.
+Smoke testing was executed first to verify application stability.
+After successful smoke testing, functional testing was performed using checklists.
+
+---
+
+### Test Artifacts
+The following test artifacts were created:
+- Smoke Checklist
+- Registration Checklist
+- Login Checklist
+- Product Page Checklist
+- Cart Checklist
+
+---
+
+### Test Execution Summary
+- Total smoke test cases: Passed
+- Functional testing status: Completed
+- Critical defects: Not found
+- Major defects: Not found
+
+---
+
+### Risks and Limitations
+- Demo environment instability
+- Possible data reset during testing
+- Payment functionality is not available for testing
+
+---
+
+### Conclusion
+Based on the performed testing, the application is considered stable and ready for further testing activities.
