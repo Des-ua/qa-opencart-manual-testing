@@ -1,0 +1,47 @@
+## Cart Checklist — OpenCart Demo
+
+### Preconditions
+- [ ] Application is accessible
+- [ ] User has at least one product added to the cart
+- [ ] User is on the Shopping Cart page
+
+---
+
+### Cart Page UI
+- [ ] Shopping Cart page opens successfully
+- [ ] Page title is displayed correctly
+- [ ] Product table is displayed
+- [ ] Product image is displayed
+- [ ] Product name is displayed
+- [ ] Product price is displayed
+- [ ] Quantity field is displayed
+- [ ] Total price is displayed
+
+---
+
+### Cart Functionality
+- [ ] User can change product quantity
+- [ ] Cart updates total price after quantity change
+- [ ] Update button works correctly
+- [ ] User can remove product from cart
+- [ ] Cart is empty after removing all products
+
+---
+
+### Navigation from Cart
+- [ ] Continue Shopping button works
+- [ ] Checkout button is displayed
+- [ ] User can navigate back to product catalog
+
+---
+
+### Cart Persistence
+- [ ] Cart content is сохранено after page refresh
+- [ ] Cart content remains after navigation to other pages
+
+---
+
+### Negative Scenarios (basic)
+- [ ] Set product quantity to zero
+- [ ] Enter invalid value in quantity field
+- [ ] Proper error message or behavior is displayed
