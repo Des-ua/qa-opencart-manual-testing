@@ -1,0 +1,50 @@
+## Login Checklist — OpenCart Demo
+
+### Preconditions
+- [ ] User has a registered account
+- [ ] User is logged out
+- [ ] Application is accessible
+- [ ] User is on the Login page
+
+---
+
+### Login Page UI
+- [ ] Login page opens successfully
+- [ ] Page title is displayed correctly
+- [ ] Email field is displayed
+- [ ] Password field is displayed
+- [ ] Login button is displayed
+- [ ] Forgotten Password link is displayed
+
+---
+
+### Valid Login
+- [ ] Login with valid email and password
+- [ ] User is logged in successfully
+- [ ] User is redirected after login
+
+---
+
+### Invalid Login
+- [ ] Login with invalid email
+- [ ] Login with invalid password
+- [ ] Login with empty fields
+- [ ] Error message is displayed for invalid credentials
+
+---
+
+### Field Validation
+- [ ] Password field masks input
+- [ ] Email field accepts valid format
+- [ ] Invalid email format is rejected
+
+---
+
+### Negative Scenarios (basic)
+- [ ] Submit form with empty fields
+- [ ] Proper error message is displayed
+
+---
+
+### Forgotten Password
+- [ ] Forgotten Password page opens
