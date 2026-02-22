@@ -34,7 +34,3 @@ Low
 
 ## Notes
 This issue affects usability and user experience.
-Medium
-
-## Notes
-Incorrect quantity handling may affect order calculation and user experience.
