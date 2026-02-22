@@ -1,10 +1,10 @@
-# Bug Report: Cart allows negative product quantity
+# Bug Report: Search with no results shows unclear UI message
 
 ## Bug ID
-BR-003
+BR-004
 
 ## Title
-Negative quantity value can be entered in cart
+No clear message displayed when search returns no results
 
 ## Environment
 - Application: OpenCart Demo
@@ -13,24 +13,27 @@ Negative quantity value can be entered in cart
 - Platform: Web (Desktop)
 
 ## Preconditions
-- User has at least one product in the cart
-- User is on the Shopping Cart page
+- Application is accessible
+- User is on the main page
 
 ## Steps to Reproduce
-1. Open Shopping Cart page
-2. Enter a negative value (e.g. -1) in quantity field
-3. Click Update button
+1. Enter a random keyword in search field (e.g. "zzzz123")
+2. Click Search
 
 ## Actual Result
-System accepts negative quantity or behaves incorrectly.
+Search results page does not clearly inform user that no products were found.
 
 ## Expected Result
-Quantity field should accept only positive numbers and show validation error.
+Clear message should be displayed indicating that no products match the search criteria.
 
 ## Severity
-Major
+Minor
 
 ## Priority
+Low
+
+## Notes
+This issue affects usability and user experience.
 Medium
 
 ## Notes
