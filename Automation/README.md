@@ -15,5 +15,5 @@ Run tests:
 pytest test_login.py -v --headed
 
 ## Test Cases
-- test_успешный_вход — successful login with valid credentials
-- test_неверный_пароль — login with invalid password shows error
+- test_successful_login — successful login with valid credentials
+- test_incorrect_password — login with invalid password shows error
