@@ -34,7 +34,7 @@ The project demonstrates practical QA skills including test planning, test case 
 ---
 
 ## Test Artifacts
-### 📋 Checklists
+### Checklists
 - Smoke Checklist
 - Registration Checklist
 - Login Checklist
@@ -55,6 +55,11 @@ The project demonstrates practical QA skills including test planning, test case 
 - SELECT, WHERE, JOIN
 - Data validation examples
 
+### Automation
+- Playwright + pytest (Python)
+- 2 automated test cases: successful login, invalid password
+- Framework: pytest with page fixtures
+
 ---
 
 ## Tools Used
@@ -63,6 +68,8 @@ The project demonstrates practical QA skills including test planning, test case 
 - SQL (basic queries)
 - Git & GitHub
 - Markdown documentation
+- Playwright (basic automation)
+- pytest
 
 ---
 
