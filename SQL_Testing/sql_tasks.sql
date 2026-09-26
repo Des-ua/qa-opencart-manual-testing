@@ -117,3 +117,136 @@ WHERE o.status <> 'cancelled'
 GROUP BY o.id
 HAVING SUM(oi.quantity * p.price) > 200
 ORDER BY order_total DESC;
+
+-- =============================================================
+-- 3. DATA QUALITY CHECKS
+-- =============================================================
+
+-- 3.1 Duplicate emails - two accounts sharing one address.
+SELECT email, COUNT(*) AS accounts
+FROM users
+WHERE email IS NOT NULL
+GROUP BY email
+HAVING COUNT(*) > 1;
+
+-- 3.2 Missing values in a field the application treats as required.
+SELECT id, first_name, last_name
+FROM users
+WHERE email IS NULL OR TRIM(email) = '';
+
+-- 3.3 Orphan order lines - items referencing a product that does not exist.
+SELECT oi.order_id, oi.product_id, oi.quantity
+FROM order_items oi
+LEFT JOIN products p ON p.id = oi.product_id
+WHERE p.id IS NULL;
+
+-- 3.4 Impossible values in stock and quantities.
+SELECT id, name, price, quantity
+FROM products
+WHERE quantity < 0
+   OR price <= 0;
+
+-- 3.5 Orders with no lines at all - an order that cannot be fulfilled.
+SELECT o.id, o.user_id, o.order_date, o.status
+FROM orders o
+LEFT JOIN order_items oi ON oi.order_id = o.id
+WHERE oi.order_id IS NULL;
+
+-- 3.6 Orders belonging to a user that no longer exists.
+SELECT o.id, o.user_id
+FROM orders o
+WHERE o.user_id NOT IN (SELECT id FROM users);
+
+-- 3.7 Orders placed by inactive users - not a bug by itself,
+SELECT o.id, o.order_date, u.id AS user_id, u.status
+FROM orders o
+JOIN users u ON u.id = o.user_id
+WHERE u.status <> 'active';
+
+-- =============================================================
+-- 4. QA VERIFICATION SCENARIOS
+-- =============================================================
+
+-- -------------------------------------------------------------
+-- 4.1 Verify a user record is created after registration
+-- -------------------------------------------------------------
+INSERT INTO users (id, first_name, last_name, email, status)
+VALUES (6, 'Tomasz', 'Mazur', 'tomasz.mazur@example.com', 'active');
+
+SELECT COUNT(*) AS rows_found         
+FROM users
+WHERE email = 'tomasz.mazur@example.com';
+
+SELECT id, first_name, last_name, status
+FROM users
+WHERE email = 'tomasz.mazur@example.com';
+
+
+-- -------------------------------------------------------------
+-- 4.2 Verify an order is created after checkout
+-- -------------------------------------------------------------
+INSERT INTO orders (id, user_id, order_date, status)
+VALUES (105, 6, '2026-09-26', 'paid');
+
+INSERT INTO order_items (order_id, product_id, quantity)
+VALUES (105, 14, 1);
+
+SELECT o.id,
+       o.status,
+       COUNT(oi.order_id) AS line_count   -- expected: 1
+FROM orders o
+JOIN order_items oi ON oi.order_id = o.id
+WHERE o.user_id = 6
+GROUP BY o.id, o.status;
+
+
+-- -------------------------------------------------------------
+-- 4.3 Verify stock decreases after an order is placed
+-- -------------------------------------------------------------
+
+-- Step 1: read the value before the action (here: 7).
+SELECT id, name, quantity AS quantity_before
+FROM products
+WHERE id = 14;
+
+-- Step 2: the application decrements stock. Simulated here.
+UPDATE products
+SET quantity = quantity - 1
+WHERE id = 14;
+
+-- Step 3: compare actual against expected in one result.
+SELECT p.id,
+       p.name,
+       p.quantity                       AS actual_quantity,
+       7 - (SELECT SUM(oi.quantity)
+            FROM order_items oi
+            JOIN orders o ON o.id = oi.order_id
+            WHERE oi.product_id = 14
+              AND o.status <> 'cancelled') AS expected_quantity,
+       CASE
+           WHEN p.quantity = 7 - (SELECT SUM(oi.quantity)
+                                  FROM order_items oi
+                                  JOIN orders o ON o.id = oi.order_id
+                                  WHERE oi.product_id = 14
+                                    AND o.status <> 'cancelled')
+           THEN 'PASS'
+           ELSE 'FAIL'
+       END                              AS result
+FROM products p
+WHERE p.id = 14;
+
+
+-- -------------------------------------------------------------
+-- 4.4 Verify a cancelled order does not lock stock
+-- -------------------------------------------------------------
+SELECT p.id,
+       p.name,
+       SUM(CASE WHEN o.status = 'cancelled' THEN oi.quantity ELSE 0 END) AS in_cancelled_orders,
+       SUM(CASE WHEN o.status <> 'cancelled' THEN oi.quantity ELSE 0 END) AS actually_sold
+FROM products p
+JOIN order_items oi ON oi.product_id = p.id
+JOIN orders o       ON o.id          = oi.order_id
+WHERE p.id = 14
+GROUP BY p.id, p.name;
+
+
